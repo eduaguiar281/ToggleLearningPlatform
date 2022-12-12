@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ToggleLearningPlatform.Constantes;
 using ToggleLearningPlatform.Data;
 using ToggleLearningPlatform.Services.Conteudo;
 using ToggleLearningPlatform.Services.Usuarios;
@@ -22,6 +23,8 @@ builder.Services.AddScoped<IClaimsTransformation, AddRolesClaimsTransformation>(
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+WebApplicationConstants.Environment = app.Environment;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
