@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.FeatureManagement;
 using ToggleLearningPlatform.Constantes;
 using ToggleLearningPlatform.Data;
 using ToggleLearningPlatform.Services.Conteudo;
@@ -19,6 +20,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddScoped<IConteudoService, ConteudoService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IClaimsTransformation, AddRolesClaimsTransformation>();
+builder.Services.AddFeatureManagement();
 
 builder.Services.AddControllersWithViews();
 
