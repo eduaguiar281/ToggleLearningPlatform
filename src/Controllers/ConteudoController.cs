@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.FeatureManagement.Mvc;
+using ToggleLearningPlatform.Constantes;
 using ToggleLearningPlatform.Models;
 using ToggleLearningPlatform.Services.Conteudo;
 
@@ -20,5 +22,7 @@ namespace ToggleLearningPlatform.Controllers
         public IActionResult Arquitetura() => View(_conteudoService.ObterConteudo(CategoriaConteudo.Arquitetura));
         public IActionResult TenhoInteresse() => View();
 
+        [FeatureGate(FeatureToggleConstants.MenuClassRoom)]
+        public IActionResult ClassRoom() => View(_conteudoService.ObterConteudo(CategoriaConteudo.ClassRoom));
     }
 }
