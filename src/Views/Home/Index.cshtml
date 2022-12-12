@@ -1,4 +1,5 @@
 ﻿@using ToggleLearningPlatform.Constantes
+@inject Microsoft.FeatureManagement.IFeatureManager _featureManager
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -30,13 +31,24 @@
                 <img class="d-block w-100" src="../images/PerfilPremium.png?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
             </a>
         </div>
-        <feature name="@FeatureToggleConstants.BannerClassRoom">
+        @if(await _featureManager.IsEnabledAsync(FeatureToggleConstants.MenuClassRoom))
+        {
             <div class="carousel-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Conteudo" asp-action="TenhoInteresse">
-                    <img class="d-block w-100" src="../images/PerfilEspecialBREVE.png?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Conteudo" asp-action="ClassRoom">
+                    <img class="d-block w-100" src="../images/PerfilEspecial.png?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
                 </a>
             </div>
-        </feature>
+        }
+        else
+        {
+            <feature name="@FeatureToggleConstants.BannerClassRoom">
+                <div class="carousel-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Conteudo" asp-action="TenhoInteresse">
+                        <img class="d-block w-100" src="../images/PerfilEspecialBREVE.png?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                    </a>
+                </div>
+            </feature>
+        }
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
