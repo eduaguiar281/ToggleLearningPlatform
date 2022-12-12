@@ -18,5 +18,7 @@ namespace ToggleLearningPlatform.Controllers
         public IActionResult Avancado() => View(_conteudoService.ObterConteudo(CategoriaConteudo.Avancado));
 
         public IActionResult Arquitetura() => View(_conteudoService.ObterConteudo(CategoriaConteudo.Arquitetura));
+        public IActionResult TenhoInteresse() => View();
+
     }
 }
