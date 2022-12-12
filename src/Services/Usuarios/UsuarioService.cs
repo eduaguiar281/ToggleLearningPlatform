@@ -11,28 +11,28 @@ namespace ToggleLearningPlatform.Services.Usuarios
         {
             "padrao@gmail.com",
             "padrao@hotmail.com",
-            "padrao@contoso.com.br"
+            "padrao@tioaguiar.com.br"
         };
 
         private readonly string[] _usuariosExpert = new string[]
         {
             "expert@gmail.com",
             "expert@hotmail.com",
-            "expert@contoso.com.br"
+            "expert@tioaguiar.com.br"
         };
 
         private readonly string[] _usuariosPremium = new string[]
         {
             "premium@gmail.com",
             "premium@hotmail.com",
-            "premium@contoso.com.br",
+            "premium@tioaguiar.com.br",
         };
 
         private readonly string[] _usuariosExclusivo = new string[]
         {
             "exclusivo@gmail.com",
             "exclusivo@hotmail.com",
-            "exclusivo@contoso.com.br"
+            "exclusivo@tioaguiar.com.br"
         };
 
         private CategoriaConteudo ConteudoLiberado(string email)
