@@ -40,22 +40,12 @@ namespace ToggleLearningPlatform.Services.Usuarios
             if (_usuariosPadrao.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
                 return CategoriaConteudo.Fundamentos;
             if (_usuariosExpert.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
-                return CategoriaConteudo.Avancado;
-            if (_usuariosPremium.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
-                return CategoriaConteudo.Arquitetura;
-            if (_usuariosExclusivo.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
-                return CategoriaConteudo.Fundamentos | CategoriaConteudo.Avancado | CategoriaConteudo.Arquitetura;
-
-            /* Melhoria de negócio
-            if (_usuariosPadrao.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
-                return CategoriaConteudo.Fundamentos;
-            if (_usuariosExpert.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
                 return CategoriaConteudo.Fundamentos | CategoriaConteudo.Avancado;
             if (_usuariosPremium.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
                 return CategoriaConteudo.Fundamentos | CategoriaConteudo.Avancado | CategoriaConteudo.Arquitetura;
             if (_usuariosExclusivo.Any(u => u.Equals(email, StringComparison.OrdinalIgnoreCase)))
                 return CategoriaConteudo.Fundamentos | CategoriaConteudo.Avancado | CategoriaConteudo.Arquitetura;
-            */
+
             return CategoriaConteudo.None;
         }
 
