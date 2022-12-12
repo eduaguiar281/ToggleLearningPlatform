@@ -2,7 +2,7 @@
 {
     public static class WebApplicationConstants
     {
-        public const string Versao = "1.0.0";
+        public const string Versao = "1.1.0";
 
         public static IWebHostEnvironment Environment;
 
