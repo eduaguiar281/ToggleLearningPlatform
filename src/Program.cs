@@ -24,7 +24,9 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IClaimsTransformation, AddRolesClaimsTransformation>();
 builder.Services.AddFeatureManagement()
     .AddFeatureFilter<PercentageFilter>()
-    .AddFeatureFilter<TargetingFilter>();
+    .AddFeatureFilter<TargetingFilter>()
+    .AddFeatureFilter<TimeWindowFilter>();
+
 builder.Services.AddSingleton<ITargetingContextAccessor, UserRolloutTargetingContextAccessor>();
 
 builder.Services.AddControllersWithViews();
