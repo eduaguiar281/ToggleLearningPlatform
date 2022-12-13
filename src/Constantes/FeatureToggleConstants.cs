@@ -5,5 +5,7 @@
         public const string BannerClassRoom = "BannerClassRoom";
 
         public const string MenuClassRoom = "MenuClassRoom";
+
+        public const string AvaliarCursos = "AvaliarCursos";
     }
 }

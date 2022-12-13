@@ -5,6 +5,7 @@ using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.FeatureFilters;
 using ToggleLearningPlatform.Constantes;
 using ToggleLearningPlatform.Data;
+using ToggleLearningPlatform.FeatureToggles;
 using ToggleLearningPlatform.Services.Conteudo;
 using ToggleLearningPlatform.Services.Usuarios;
 
@@ -22,7 +23,9 @@ builder.Services.AddScoped<IConteudoService, ConteudoService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IClaimsTransformation, AddRolesClaimsTransformation>();
 builder.Services.AddFeatureManagement()
-    .AddFeatureFilter<PercentageFilter>();
+    .AddFeatureFilter<PercentageFilter>()
+    .AddFeatureFilter<TargetingFilter>();
+builder.Services.AddSingleton<ITargetingContextAccessor, UserRolloutTargetingContextAccessor>();
 
 builder.Services.AddControllersWithViews();
 

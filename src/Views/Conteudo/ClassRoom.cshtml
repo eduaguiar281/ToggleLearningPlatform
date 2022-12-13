@@ -1,4 +1,5 @@
 ﻿@using ToggleLearningPlatform.Services.Usuarios
+@using ToggleLearningPlatform.Constantes
 @model IEnumerable<ToggleLearningPlatform.Models.ConteudoViewModel>
 @inject IUsuarioService _usuarioService
 @{
@@ -61,6 +62,11 @@
     .space-ten {
         padding: 10px 0;
     }
+
+    .checked {
+        color: orange;
+    }
+
 </style>
 <div class="container">
 
@@ -98,6 +104,18 @@
                                 </div>
                             </div>
                         }
+                        <feature name="@FeatureToggleConstants.AvaliarCursos">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>Avalie</h4>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                        </feature>
                     </span>
                 </div>
             }
