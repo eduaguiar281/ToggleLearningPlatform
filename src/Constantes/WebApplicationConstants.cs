@@ -2,10 +2,10 @@
 {
     public static class WebApplicationConstants
     {
-        public const string Versao = "1.1.0";
+        public const string Versao = "1.2.0";
 
-        public static IWebHostEnvironment Environment;
+        public static IWebHostEnvironment LocalEnvironment;
 
-        public static readonly string Ambiente = Environment is null ? "Development" : Environment.EnvironmentName;
+        public static string Ambiente() => LocalEnvironment is null ? "Development" : LocalEnvironment.EnvironmentName;
     }
 }

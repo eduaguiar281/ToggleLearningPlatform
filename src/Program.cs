@@ -28,7 +28,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-WebApplicationConstants.Environment = app.Environment;
+WebApplicationConstants.LocalEnvironment = app.Environment;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
